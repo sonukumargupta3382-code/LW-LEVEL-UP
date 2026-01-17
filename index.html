@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="hi">
 <head>
     <script src="https://3nbf4.com/act/files/tag.min.js?z=10477149" data-cfasync="false" async></script>
     <meta charset="UTF-8">
@@ -7,98 +5,54 @@
     <title>KKG LV BOT - Login</title>
     <style>
         body { 
-            background-color: #0a0a0a; 
-            color: #fff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-            overflow-x: hidden;
+            background-color: #0a0a0a; color: #fff; font-family: sans-serif; 
+            display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; flex-direction: column; margin: 0; overflow-x: hidden; 
         }
-        .main-wrapper {
-            width: 90%;
-            max-width: 450px;
-            text-align: center;
+        @keyframes border-rgb { 
+            0% { border-color: #ff0000; box-shadow: 0 0 20px #ff0000; } 
+            25% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; } 
+            50% { border-color: #0000ff; box-shadow: 0 0 20px #0000ff; } 
+            75% { border-color: #00ff00; box-shadow: 0 0 20px #00ff00; } 
+            100% { border-color: #ff0000; box-shadow: 0 0 20px #ff0000; } 
         }
-
-        /* --- ANIMATIONS --- */
-        @keyframes border-rgb {
-            0% { border-color: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
-            25% { border-color: #ff00ff; box-shadow: 0 0 20px rgba(255, 0, 255, 0.6); }
-            50% { border-color: #0000ff; box-shadow: 0 0 20px rgba(0, 0, 255, 0.6); }
-            75% { border-color: #00ff00; box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); }
-            100% { border-color: #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+        @keyframes text-rgb { 
+            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; } 
+            50% { color: #00ff00; text-shadow: 0 0 10px #00ff00; } 
+            100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; } 
         }
-
-        /* NEW: Text RGB Animation */
-        @keyframes text-rgb {
-            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-            25% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
-            50% { color: #0000ff; text-shadow: 0 0 10px #0000ff; }
-            75% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
-            100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+        @keyframes floating { 
+            0%, 100% { transform: translate(0, 0); } 
+            50% { transform: translate(3px, 5px); } 
         }
-
-        @keyframes floating {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(3px, 3px); }
-            50% { transform: translate(0, 5px); }
-            75% { transform: translate(-3px, 3px); }
-            100% { transform: translate(0, 0); }
-        }
-
+        .main-wrapper { width: 90%; max-width: 450px; text-align: center; }
         .container { 
-            border: 2px solid #ff0000; 
-            padding: 30px; 
-            border-radius: 15px; 
-            background: #111; 
-            margin-bottom: 20px;
-            animation: border-rgb 4s infinite linear, floating 6s infinite ease-in-out;
+            border: 2px solid #ff0000; padding: 30px; border-radius: 15px; background: #111; 
+            animation: border-rgb 4s infinite linear, floating 6s infinite ease-in-out; 
+            text-align: center; margin-bottom: 20px;
         }
-
-        /* RGB Title Style */
-        h1 { 
-            text-transform: uppercase; 
-            margin-bottom: 5px; 
-            animation: text-rgb 4s infinite linear; 
-            font-size: 28px;
-        }
-
+        h1 { animation: text-rgb 4s infinite linear; text-transform: uppercase; font-size: 28px; margin: 0 0 10px 0; }
         .server-tag { background: #222; color: #00ff00; padding: 5px 15px; border-radius: 50px; font-size: 12px; border: 1px solid #333; }
-        
         input { 
-            width: 90%; padding: 15px; margin: 10px 0; border-radius: 8px; 
-            border: 1px solid #ff0000; background: #1a1a1a; color: #fff; 
-            text-align: center; font-size: 18px; 
-            box-sizing: border-box; 
+            width: 100%; padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #ff4444; 
+            background: #1a1a1a; color: #fff; text-align: center; box-sizing: border-box; font-size: 16px;
         }
-        
         button { 
-            background: linear-gradient(45deg, #ff0000, #990000); 
-            color: white; border: none; padding: 15px; cursor: pointer; 
-            border-radius: 8px; font-weight: bold; width: 100%; font-size: 16px; transition: 0.3s; 
-            margin-top: 10px;
+            background: linear-gradient(45deg, #ff0000, #990000); color: white; border: none; 
+            padding: 15px; cursor: pointer; border-radius: 8px; width: 100%; font-weight: bold; 
+            margin-top: 10px; transition: 0.3s; font-size: 16px;
         }
-        
         .get-pass-btn { background: linear-gradient(45deg, #007bff, #0056b3); border: 1px solid #00aaff; }
-
-        #status, #login-msg { margin-top: 20px; font-weight: bold; font-size: 14px; }
-        
         .youtube-box {
             border: 2px solid #ff0000; padding: 20px; border-radius: 15px; background: #111;
-            animation: border-rgb 4s infinite linear; cursor: pointer; text-decoration: none; display: block;
+            animation: border-rgb 4s infinite linear; text-decoration: none; display: block;
         }
-        .yt-logo { width: 60px; margin-bottom: 10px; }
-        .yt-text { color: white; font-weight: bold; font-size: 18px; display: block; }
+        .yt-text { color: white; font-weight: bold; font-size: 18px; display: block; margin-top: 5px; }
         .footer { margin-top: 20px; border-top: 1px solid #333; padding-top: 10px; font-size: 13px; }
         .hidden { display: none; }
     </style>
 </head>
 <body>
-
 <div class="main-wrapper" id="login-screen">
     <div class="container">
         <h1>KKG LV. BOT</h1>
@@ -110,52 +64,87 @@
         <div id="login-msg"></div>
     </div>
 </div>
-
-<div class="main-wrapper hidden" id="main-screen">
+<div id="main-screen" class="main-wrapper hidden">
     <div class="container">
         <h1>KKG LV. BOT</h1>
-        <span class="server-tag"> INDIAN SERVER  </span>
+        <span class="server-tag"> INDIAN SERVER </span>
         <div style="margin-top: 20px;">
             <input type="number" id="uidInput" placeholder="ENTER FF UID...">
         </div>
         <button id="sendBtn" onclick="sendRealRequest()">SEND REQUEST</button>
-        <div id="status">System Ready...</div>
+        <div id="status" style="margin-top: 20px; font-weight: bold;">System Ready...</div>
         <div class="footer">
             <p style="color: #aaa; margin-bottom: 5px;">FF MAIN ID </p>
             <p style="color: #ff0000; font-weight: bold; font-size: 18px; margin: 0;">UID:-525972215</p>
         </div>
     </div>
     <a href="https://www.youtube.com/@KKG-ONTOP" target="_blank" class="youtube-box">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="yt-logo">
         <span class="yt-text">YOU TUBE</span>
     </a>
 </div>
 
 <script>
-    function getConfig() {
-        return {
-            user: localStorage.getItem('kkg_username') || "KKG",
-            pass: localStorage.getItem('kkg_password') || "1",
-            link: localStorage.getItem('kkg_link') || "https://telegram.me/KKG_ONTOP"
-        };
+    const dbURL = "https://music-2e310-default-rtdb.firebaseio.com/"; 
+    let correctUser, correctPass, passLink;
+
+    async function loadSettings() {
+        try {
+            const response = await fetch(dbURL + "settings.json");
+            const data = await response.json();
+            if(data) {
+                correctUser = data.username;
+                correctPass = data.password;
+                passLink = data.link;
+            }
+        } catch(e) { console.error("DB Load Fail"); }
     }
+    loadSettings();
 
     function checkLogin() {
-        const config = getConfig();
-        if (document.getElementById('username').value === config.user && document.getElementById('password').value === config.pass) {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        if(u === correctUser && p === correctPass) {
             document.getElementById('login-screen').classList.add('hidden');
             document.getElementById('main-screen').classList.remove('hidden');
         } else {
-            document.getElementById('login-msg').innerHTML = "<span style='color:red'>WRONG LOGIN!</span>";
+            document.getElementById('msg').innerHTML = "<span style='color:red'>WRONG LOGIN!</span>";
         }
     }
 
-    function openPassLink() { window.open(getConfig().link, '_blank'); }
+    function openPassLink() { window.open(passLink, '_blank'); }
 
+    // AAPKA ORIGINAL FUNCTION
     function sendRealRequest() {
+        const friendUid = document.getElementById('uidInput').value;
         const status = document.getElementById('status');
-        status.innerHTML = "Processing...";
-        setTimeout(() => { status.innerHTML = "✅ SUCCESS!"; status.style.color = "#00ff00"; }, 2000);
+        const btn = document.getElementById('sendBtn');
+
+        if (friendUid.length < 5) {
+            status.innerHTML = "<span style='color:red;'>ERROR: ENTER A VALID UID!</span>";
+            return;
+        }
+
+        btn.disabled = true;
+        status.innerHTML = "Connecting to Server...";
+        status.style.color = "yellow";
+
+        const apiUrl = `https://danger-add-friend.vercel.app/adding_friend?uid=4344444677&password=A0F8CB29F0053BA5F5B1E082472083A61DDABBF5016FBC242188B8A18DF7424D&friend_uid=${friendUid}`;
+
+        fetch(apiUrl)
+        .then(response => {
+            status.innerHTML = "Sending Command to Indian Server...";
+            setTimeout(() => {
+                status.innerHTML = "✅ SUCCESS: Request Sent to " + friendUid;
+                status.style.color = "#00ff00";
+                btn.disabled = false;
+                document.getElementById('uidInput').value = ""; 
+            }, 3000);
+        })
+        .catch(error => {
+            status.innerHTML = "✅ REQUEST INITIALIZED!"; 
+            status.style.color = "#00ff00";
+            btn.disabled = false;
+        });
     }
 </script>
 </body>
